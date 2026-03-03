@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Main chariot/ther (temple chariot) structure -->
+  <!-- Base platform / wheels -->
+  <circle cx="130" cy="540" r="35"/>
+  <circle cx="130" cy="540" r="20"/>
+  <circle cx="370" cy="540" r="35"/>
+  <circle cx="370" cy="540" r="20"/>
+  <!-- Wheel spokes -->
+  <path d="M130 505 L130 575 M95 540 L165 540 M100 510 L160 570 M100 570 L160 510"/>
+  <path d="M370 505 L370 575 M335 540 L405 540 M340 510 L400 570 M340 570 L400 510"/>
+  <!-- Chariot body base -->
+  <path d="M80 505 L80 460 L420 460 L420 505"/>
+  <path d="M85 475 L415 475"/>
+  <path d="M90 465 L410 465"/>
+  <!-- Decorative panel on chariot -->
+  <path d="M100 505 L100 462 L400 462 L400 505"/>
+  <!-- Decorative carvings on body -->
+  <rect x="110" y="468" width="30" height="30" rx="2"/>
+  <rect x="150" y="468" width="30" height="30" rx="2"/>
+  <rect x="190" y="468" width="30" height="30" rx="2"/>
+  <rect x="230" y="468" width="40" height="30" rx="2"/>
+  <rect x="280" y="468" width="30" height="30" rx="2"/>
+  <rect x="320" y="468" width="30" height="30" rx="2"/>
+  <rect x="360" y="468" width="30" height="30" rx="2"/>
+  <!-- Tower above chariot -->
+  <!-- Ground floor -->
+  <path d="M150 460 L150 380 L350 380 L350 460"/>
+  <path d="M155 420 L345 420"/>
+  <path d="M160 400 L340 400"/>
+  <!-- Arched entrances -->
+  <path d="M180 460 Q180 440 200 435 Q220 440 220 460"/>
+  <path d="M240 460 Q240 440 260 435 Q280 440 280 460"/>
+  <path d="M300 460 Q300 440 320 435 Q340 440 340 460"/>
+  <!-- Second tier -->
+  <path d="M165 380 L165 310 L335 310 L335 380"/>
+  <path d="M170 350 L330 350"/>
+  <path d="M175 330 L325 330"/>
+  <!-- Arches on second tier -->
+  <path d="M190 380 Q190 363 205 358 Q220 363 220 380"/>
+  <path d="M245 380 Q245 363 260 358 Q275 363 275 380"/>
+  <path d="M300 380 Q300 363 315 358 Q330 363 330 380"/>
+  <!-- Third tier -->
+  <path d="M185 310 L185 250 L315 250 L315 310"/>
+  <path d="M190 280 L310 280"/>
+  <!-- Fourth tier -->
+  <path d="M205 250 L205 200 L295 200 L295 250"/>
+  <path d="M210 225 L290 225"/>
+  <!-- Fifth tier -->
+  <path d="M220 200 L220 158 L280 158 L280 200"/>
+  <!-- Pointed spire -->
+  <path d="M220 158 L240 120 L250 100 L260 120 L280 158"/>
+  <path d="M235 140 L265 140"/>
+  <path d="M228 152 L272 152"/>
+  <!-- Kalasha (finial) on top -->
+  <path d="M243 100 L250 85 L257 100"/>
+  <ellipse cx="250" cy="82" rx="8" ry="10"/>
+  <circle cx="250" cy="72" r="5"/>
+  <!-- Flagpole -->
+  <path d="M250 67 L250 30"/>
+  <path d="M250 30 L270 38 L250 46"/>
+</svg>

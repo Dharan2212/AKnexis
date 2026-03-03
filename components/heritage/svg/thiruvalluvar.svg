@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 700" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Pedestal -->
+  <path d="M60 700 L60 580 L240 580 L240 700"/>
+  <path d="M50 600 L250 600"/>
+  <path d="M40 620 L260 620"/>
+  <path d="M45 640 L255 640"/>
+  <path d="M55 660 L245 660"/>
+  <path d="M65 680 L235 680"/>
+  <!-- Pedestal inscriptions suggestion -->
+  <path d="M90 605 L210 605"/>
+  <path d="M85 612 L215 612"/>
+  <!-- Statue base platform -->
+  <path d="M75 580 L75 540 L225 540 L225 580"/>
+  <path d="M85 555 L215 555"/>
+  <!-- Feet / robes base -->
+  <path d="M120 540 L115 480 L185 480 L180 540"/>
+  <path d="M125 510 L175 510"/>
+  <!-- Robe/dhoti flowing lines -->
+  <path d="M115 480 L108 440 L105 400 L108 360 L120 340"/>
+  <path d="M185 480 L192 440 L195 400 L192 360 L180 340"/>
+  <path d="M115 460 L185 460"/>
+  <path d="M112 440 L188 440"/>
+  <path d="M110 420 L190 420"/>
+  <path d="M110 400 L190 400"/>
+  <path d="M112 380 L188 380"/>
+  <path d="M115 360 L185 360"/>
+  <!-- Torso / upper body -->
+  <path d="M120 340 L118 300 L182 300 L180 340"/>
+  <path d="M115 320 L185 320"/>
+  <!-- Chest drape / angavastram -->
+  <path d="M118 310 L130 340 L150 345 L170 340 L182 310"/>
+  <!-- Necklace/garland -->
+  <path d="M125 300 Q150 295 175 300"/>
+  <!-- Shoulders -->
+  <path d="M118 300 L100 295 L95 285 L100 278"/>
+  <path d="M182 300 L200 295 L205 285 L200 278"/>
+  <!-- Arms - right holding book (Thirukkural) -->
+  <path d="M200 278 L215 265 L225 268 L215 278 L200 285"/>
+  <!-- Book -->
+  <path d="M215 258 L240 255 L242 268 L217 272 Z"/>
+  <path d="M228 256 L228 270"/>
+  <!-- Left arm raised in blessing -->
+  <path d="M100 278 L82 262 L78 250 L86 248 L95 260 L105 270"/>
+  <path d="M78 248 L82 238 L90 240 L88 250"/>
+  <!-- Neck -->
+  <path d="M138 300 L136 285"/>
+  <path d="M162 300 L164 285"/>
+  <!-- Head -->
+  <ellipse cx="150" cy="268" rx="28" ry="22"/>
+  <!-- Face features -->
+  <path d="M138 264 Q142 260 146 264"/>
+  <path d="M154 264 Q158 260 162 264"/>
+  <path d="M143 272 Q150 277 157 272"/>
+  <!-- Nose -->
+  <path d="M150 264 L148 271 L152 271"/>
+  <!-- Traditional crown/turban -->
+  <path d="M122 256 L130 240 L140 232 L150 228 L160 232 L170 240 L178 256"/>
+  <path d="M130 240 Q150 233 170 240"/>
+  <path d="M135 235 Q150 229 165 235"/>
+  <!-- Crown top decoration -->
+  <path d="M142 228 L148 215 L150 208 L152 215 L158 228"/>
+  <circle cx="150" cy="206" r="4"/>
+  <!-- Ear ornaments -->
+  <circle cx="122" cy="268" r="5"/>
+  <circle cx="178" cy="268" r="5"/>
+</svg>

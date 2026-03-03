@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Main platform/plinth -->
+  <path d="M50 460 L50 420 L550 420 L550 460"/>
+  <path d="M60 440 L540 440"/>
+  <!-- Side minarets (4 total) -->
+  <!-- Front left minaret -->
+  <path d="M70 420 L70 200 L60 198 L65 185 L60 170 L70 165 L80 170 L75 185 L80 198 L70 200"/>
+  <ellipse cx="70" cy="162" rx="10" ry="6"/>
+  <path d="M70 156 L70 140 L65 135 L75 135 L70 130"/>
+  <!-- Front right minaret -->
+  <path d="M530 420 L530 200 L520 198 L525 185 L520 170 L530 165 L540 170 L535 185 L540 198 L530 200"/>
+  <ellipse cx="530" cy="162" rx="10" ry="6"/>
+  <path d="M530 156 L530 140 L525 135 L535 135 L530 130"/>
+  <!-- Back minarets (partially visible) -->
+  <path d="M110 420 L110 250 L102 248 L106 238 L102 228 L110 224 L118 228 L114 238 L118 248 L110 250"/>
+  <ellipse cx="110" cy="221" rx="9" ry="5"/>
+  <path d="M490 420 L490 250 L482 248 L486 238 L482 228 L490 224 L498 228 L494 238 L498 248 L490 250"/>
+  <ellipse cx="490" cy="221" rx="9" ry="5"/>
+  <!-- Main building body -->
+  <path d="M130 420 L130 280 L470 280 L470 420"/>
+  <!-- Decorative arches on main building -->
+  <path d="M155 420 Q155 370 180 360 Q205 370 205 420"/>
+  <path d="M230 420 Q230 370 255 360 Q280 370 280 420"/>
+  <path d="M320 420 Q320 370 345 360 Q370 370 370 420"/>
+  <path d="M395 420 Q395 370 420 360 Q445 370 445 420"/>
+  <!-- Central arch (larger, main entrance) -->
+  <path d="M240 420 Q240 340 300 325 Q360 340 360 420"/>
+  <!-- Wing structures -->
+  <path d="M130 360 L90 360 L90 420"/>
+  <path d="M90 390 Q90 368 110 360"/>
+  <path d="M470 360 L510 360 L510 420"/>
+  <path d="M510 390 Q510 368 490 360"/>
+  <!-- Central dome -->
+  <path d="M220 280 Q220 180 300 155 Q380 180 380 280"/>
+  <ellipse cx="300" cy="155" rx="50" ry="20"/>
+  <!-- Drum of dome -->
+  <path d="M250 210 Q250 195 300 190 Q350 195 350 210"/>
+  <!-- Inner dome shape -->
+  <path d="M240 270 Q240 200 300 180 Q360 200 360 270"/>
+  <!-- Finial on main dome -->
+  <path d="M295 155 L295 130 L305 130 L305 155"/>
+  <path d="M285 130 L315 130"/>
+  <ellipse cx="300" cy="128" rx="15" ry="8"/>
+  <path d="M293 120 L300 105 L307 120"/>
+  <circle cx="300" cy="103" r="4"/>
+  <!-- Small corner domes -->
+  <path d="M155 280 Q155 245 175 235 Q195 245 195 280"/>
+  <ellipse cx="175" cy="233" rx="20" ry="8"/>
+  <path d="M172 225 L175 215 L178 225"/>
+  <path d="M405 280 Q405 245 425 235 Q445 245 445 280"/>
+  <ellipse cx="425" cy="233" rx="20" ry="8"/>
+  <path d="M422 225 L425 215 L428 225"/>
+  <!-- Reflecting pool -->
+  <path d="M200 460 L200 490 L400 490 L400 460"/>
+  <path d="M205 470 L395 470"/>
+  <path d="M210 480 L390 480"/>
+  <!-- Garden paths -->
+  <path d="M300 490 L300 500"/>
+  <path d="M200 490 Q250 495 300 490 Q350 495 400 490"/>
+  <!-- Decorative details -->
+  <path d="M265 390 Q265 372 275 365 Q285 372 285 390"/>
+  <path d="M315 390 Q315 372 325 365 Q335 372 335 390"/>
+  <!-- Calligraphy panels on arch -->
+  <path d="M252 380 L268 380 M252 386 L268 386 M252 392 L268 392"/>
+  <path d="M332 380 L348 380 M332 386 L348 386 M332 392 L348 392"/>
+  <!-- Window jalis on main arch area -->
+  <path d="M280 340 L280 360 M288 340 L288 360 M296 340 L296 360 M304 340 L304 360 M312 340 L312 360 M320 340 L320 360"/>
+  <path d="M278 344 L322 344 M278 350 L322 350 M278 356 L322 356"/>
+</svg>
