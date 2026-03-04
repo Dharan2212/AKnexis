@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Prevent indexing of admin area
+Disallow: /admin
+Disallow: /api
+
+# Sitemap location
+Sitemap: https://aknexis.netlify.app/sitemap.xml
