@@ -9,6 +9,7 @@ import { Phone, Mail, MessageCircle, MapPin, Send, CheckCircle2 } from 'lucide-r
 import HeritageBackground from '@/components/heritage/HeritageBackground'
 import { siteConfig } from '@/lib/config/site'
 import { cn } from '@/lib/utils/cn'
+import HeritageImageBackground from '@/components/heritage/HeritageImageBackground'
 
 const schema = z.object({
   fullName: z.string().min(2, 'Name must be at least 2 characters'),
@@ -72,7 +73,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="relative py-24 overflow-hidden bg-grid">
-        <HeritageBackground variant="thiruvalluvar" />
+        <HeritageImageBackground src="/heritage/aknexis-vk.png" opacity={0.48} />
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <div className="text-teal-400 text-xs font-medium tracking-widest uppercase mb-4">Get In Touch</div>
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-syne)' }}>Contact AKnexis</h1>

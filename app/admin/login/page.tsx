@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Eye, EyeOff, LogIn } from 'lucide-react'
+import HeritageImageBackground from '@/components/heritage/HeritageImageBackground'
 
 export default function AdminLoginPage() {
   const router = useRouter()
@@ -35,6 +36,7 @@ export default function AdminLoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
+      <HeritageImageBackground src="/heritage/aknexis-m1.png" opacity={0.18} />
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-600 to-teal-400 flex items-center justify-center mx-auto mb-4">

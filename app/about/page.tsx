@@ -5,6 +5,7 @@ import HeritageBackground from '@/components/heritage/HeritageBackground'
 import CTABanner from '@/components/sections/CTABanner'
 import { buildMetadata, pageMeta, breadcrumbSchema } from '@/lib/config/seo'
 import { siteConfig } from '@/lib/config/site'
+import HeritageImageBackground from '@/components/heritage/HeritageImageBackground'
 
 export const metadata: Metadata = buildMetadata({ title: pageMeta.about.title, description: pageMeta.about.description, path: '/about' })
 
@@ -24,7 +25,7 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bc) }} />
       {/* Hero */}
       <section className="relative py-24 lg:py-32 overflow-hidden bg-grid">
-        <HeritageBackground variant="valluvarKottam" />
+        <HeritageImageBackground src="/heritage/aknexis-londan.png" opacity={0.18} />
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl">
             <div className="text-teal-400 text-xs font-medium tracking-widest uppercase mb-4">About AKnexis</div>

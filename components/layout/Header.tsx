@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useMemo } from 'react'
+import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react'
@@ -11,7 +12,8 @@ const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   {
-    label: 'Services', href: '/services',
+    label: 'Services',
+    href: '/services',
     children: siteConfig.nav.services,
   },
   { label: 'Industries', href: '/industries' },
@@ -28,11 +30,13 @@ export default function Header() {
   const pathname = usePathname()
   const dropdownRef = useRef<HTMLDivElement>(null)
 
+  // Close menus on route change
   useEffect(() => {
     setMobileOpen(false)
     setServicesOpen(false)
   }, [pathname])
 
+  // Close desktop dropdown on outside click
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -43,14 +47,118 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClick)
   }, [])
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (!mobileOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [mobileOpen])
+
+  // Close on ESC
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') setMobileOpen(false)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [])
+
+  const mobileDrawer = useMemo(() => {
+    if (!mobileOpen) return null
+    if (typeof document === 'undefined') return null
+
+    return createPortal(
+      <div className="xl:hidden fixed inset-0 z-[9999]">
+        {/* Backdrop */}
+        <button
+          aria-label="Close menu"
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          onClick={() => setMobileOpen(false)}
+        />
+        {/* Drawer */}
+        <div className="absolute top-0 right-0 h-full w-full max-w-sm bg-[#03060F]/98 border-l border-white/10 shadow-2xl overflow-y-auto">
+          <div className="h-16 px-4 flex items-center justify-between border-b border-white/5">
+            <Link href="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-600 to-teal-400 flex items-center justify-center">
+                <span className="text-white font-bold text-sm" style={{ fontFamily: 'var(--font-syne)' }}>
+                  A
+                </span>
+              </div>
+              <span className="text-white font-bold text-lg" style={{ fontFamily: 'var(--font-syne)' }}>
+                AK<span className="text-teal-400">nexis</span>
+              </span>
+            </Link>
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="p-2 text-slate-400 hover:text-white"
+              aria-label="Close menu"
+            >
+              <X size={22} />
+            </button>
+          </div>
+
+          <nav className="p-4 space-y-1">
+            {NAV_LINKS.map((link) => (
+              <div key={link.label}>
+                <Link
+                  href={link.href}
+                  className={cn(
+                    'block py-3 px-4 text-base rounded-lg transition-colors',
+                    pathname === link.href
+                      ? 'text-teal-400 bg-teal-400/10'
+                      : 'text-slate-300 hover:text-white hover:bg-white/5'
+                  )}
+                  onClick={() => (link.children ? undefined : setMobileOpen(false))}
+                >
+                  {link.label}
+                </Link>
+
+                {link.children && (
+                  <div className="ml-4 mt-1 space-y-1 border-l border-teal-400/20 pl-4">
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className="block py-2 text-sm text-slate-400 hover:text-teal-400 transition-colors"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+
+            <div className="pt-4">
+              <Link
+                href="/contact"
+                className="btn-primary w-full text-center justify-center"
+                onClick={() => setMobileOpen(false)}
+              >
+                Book Free Consultation
+              </Link>
+            </div>
+          </nav>
+        </div>
+      </div>,
+      document.body
+    )
+  }, [mobileOpen, pathname])
+
   return (
-    <header className="sticky top-0 z-40 glass-elevated border-b border-white/5">
+<header className="w-full glass-elevated border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-600 to-teal-400 flex items-center justify-center">
-              <span className="text-white font-bold text-sm" style={{ fontFamily: 'var(--font-syne)' }}>A</span>
+              <span className="text-white font-bold text-sm" style={{ fontFamily: 'var(--font-syne)' }}>
+                A
+              </span>
             </div>
             <span className="text-white font-bold text-lg" style={{ fontFamily: 'var(--font-syne)' }}>
               AK<span className="text-teal-400">nexis</span>
@@ -91,10 +199,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={cn(
-                    'nav-link px-3 py-2 rounded-md',
-                    pathname === link.href && 'text-teal-400'
-                  )}
+                  className={cn('nav-link px-3 py-2 rounded-md', pathname === link.href && 'text-teal-400')}
                 >
                   {link.label}
                 </Link>
@@ -108,9 +213,11 @@ export default function Header() {
               Book Free Consultation
             </Link>
             <button
-              onClick={() => setMobileOpen(!mobileOpen)}
+              onClick={() => setMobileOpen((v) => !v)}
               className="xl:hidden p-2 text-slate-400 hover:text-white"
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -118,52 +225,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
-      {mobileOpen && (
-        <div className="xl:hidden fixed inset-0 top-16 z-50 bg-[#03060F]/98 backdrop-blur-lg overflow-y-auto">
-          <nav className="p-6 space-y-1">
-            {NAV_LINKS.map((link) => (
-              <div key={link.label}>
-                <Link
-                  href={link.href}
-                  className={cn(
-                    'block py-3 px-4 text-base rounded-lg transition-colors',
-                    pathname === link.href
-                      ? 'text-teal-400 bg-teal-400/10'
-                      : 'text-slate-300 hover:text-white hover:bg-white/5'
-                  )}
-                  onClick={() => link.children ? undefined : setMobileOpen(false)}
-                >
-                  {link.label}
-                </Link>
-                {link.children && (
-                  <div className="ml-4 mt-1 space-y-1 border-l border-teal-400/20 pl-4">
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="block py-2 text-sm text-slate-400 hover:text-teal-400 transition-colors"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-            <div className="pt-4">
-              <Link
-                href="/contact"
-                className="btn-primary w-full text-center justify-center"
-                onClick={() => setMobileOpen(false)}
-              >
-                Book Free Consultation
-              </Link>
-            </div>
-          </nav>
-        </div>
-      )}
+      {mobileDrawer}
     </header>
   )
 }

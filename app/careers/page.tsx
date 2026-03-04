@@ -4,6 +4,7 @@ import { Heart, Zap, Users, BookOpen, Mail } from 'lucide-react'
 import CTABanner from '@/components/sections/CTABanner'
 import { buildMetadata, pageMeta, breadcrumbSchema } from '@/lib/config/seo'
 import { siteConfig } from '@/lib/config/site'
+import HeritageImageBackground from '@/components/heritage/HeritageImageBackground'
 
 export const metadata: Metadata = buildMetadata({ title: pageMeta.careers.title, description: pageMeta.careers.description, path: '/careers' })
 
@@ -29,6 +30,7 @@ export default function CareersPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bc) }} />
       <section className="py-24 bg-grid text-center">
+          <HeritageImageBackground src="/heritage/aknexis-usa.png" opacity={0.18} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-teal-400 text-xs font-medium tracking-widest uppercase mb-4">Careers</div>
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-syne)' }}>Join the AKnexis Team</h1>

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight, CheckCircle2, MessageCircle } from 'lucide-react'
-import HeritageBackground from '@/components/heritage/HeritageBackground'
+import HeritageImageBackground from '@/components/heritage/HeritageImageBackground'
 import { siteConfig } from '@/lib/config/site'
 
 const highlights = [
@@ -12,8 +12,8 @@ const highlights = [
 
 export default function HomeHero() {
   return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-grid">
-      <HeritageBackground variant="mahabalipuram" density="soft" />
+    <section className="relative flex items-center overflow-hidden bg-grid">
+       <HeritageImageBackground src="/heritage/aknexis-thiruvalluvar.png" opacity={0.58} />
 
       {/* Background effects */}
       <div className="absolute top-0 left-0 w-80 h-80 bg-accent-600/8 rounded-full blur-3xl" />

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Syne, Plus_Jakarta_Sans } from 'next/font/google'
+import SiteHeader from '@/components/layout/SiteHeader'
 import TopBar from '@/components/layout/TopBar'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
@@ -36,9 +37,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body className="font-body antialiased">
-        <TopBar />
-        <Header />
-        <main>{children}</main>
+        <SiteHeader />
+
+{/* Spacer so content starts below fixed header */}
+<div className="h-16 lg:h-[104px]" />
+
+<main>{children}</main>
         <Footer />
         <FloatingWhatsApp />
         <StickyCTA />
