@@ -209,7 +209,7 @@ export default function Header() {
 
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-3">
-            <Link href="/contact" className="hidden sm:flex btn-primary text-sm py-2 px-4">
+            <Link href="/contact" className="btn-primary text-sm py-2 px-4 max-sm:hidden">
               Book Free Consultation
             </Link>
             <button
