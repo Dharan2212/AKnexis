@@ -30,7 +30,9 @@ export async function POST(req: NextRequest) {
       data: { user: result.user },
       message: 'Login successful',
     })
-    response.headers.set('Set-Cookie', result.cookie)
+
+    // IMPORTANT: append is safer than set (won't override other cookies)
+    response.headers.append('Set-Cookie', result.cookie)
     return response
   } catch (error) {
     // Log failed login attempt
@@ -44,7 +46,9 @@ export async function POST(req: NextRequest) {
         summary: `Failed login attempt for ${(body as { email?: string }).email || 'unknown'}`,
         ipAddress: getClientIp(req),
       })
-    } catch { /* ignore */ }
+    } catch {
+      /* ignore */
+    }
 
     return handleApiError(error)
   }

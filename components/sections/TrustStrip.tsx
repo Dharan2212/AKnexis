@@ -3,23 +3,23 @@ import { Shield, Users, Zap, HeadphonesIcon } from 'lucide-react'
 const items = [
   {
     icon: Shield,
-    title: 'End-to-End Setup',
-    desc: 'Legal, brand, digital — all under one roof',
+    title: 'Compliance-First Execution',
+    desc: 'Clear documentation, clean process, no shortcuts',
   },
   {
     icon: Users,
-    title: 'Expert Team',
-    desc: 'Domain specialists with practical experience',
+    title: 'Dedicated Consultant',
+    desc: 'Single point of contact from start to delivery',
   },
   {
     icon: Zap,
-    title: 'Fast & Reliable',
-    desc: 'Structured delivery with clear timelines',
+    title: 'Transparent Timelines',
+    desc: 'Milestones + updates so you always know status',
   },
   {
     icon: HeadphonesIcon,
-    title: 'Ongoing Support',
-    desc: 'We stay with you beyond launch',
+    title: 'After-Delivery Support',
+    desc: 'Handover + assistance beyond launch',
   },
 ]
 
