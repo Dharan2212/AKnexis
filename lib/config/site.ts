@@ -6,9 +6,9 @@ export const siteConfig = {
     'AKnexis is your complete business setup and growth partner. We handle legal registrations, branding, web development, digital marketing, and ongoing support across India.',
 
   contact: {
-    phone: '+91 6385501312',
-    phoneTel: 'tel:+916385501312',
-    whatsapp: 'https://wa.me/916385501312',
+    phone: '+91 7090582863',
+    phoneTel: 'tel:+917090582863',
+    whatsapp: 'https://wa.me/917090582863',
     email: 'aknexis.in@gmail.com',
     emailLink: 'mailto:aknexis.in@gmail.com',
   },
